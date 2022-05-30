@@ -1,0 +1,23 @@
+{
+  "name": "flip-my-coin",
+  "version": "1.0.0",
+  "description": "Flip a coin app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DorukEmre/FlipMyCoin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DorukEmre/FlipMyCoin/issues"
+  },
+  "homepage": "https://github.com/DorukEmre/FlipMyCoin#readme",
+  "engines": {
+    "node": "16.15.0"
+  }
+}
