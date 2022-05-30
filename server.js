@@ -20,7 +20,7 @@ const server = http.createServer((req, res) => {
       res.writeHead(200, {'Content-Type': 'application/json'});
       const objToJson = {
         name: flipRes,
-        image: '/assets/Heads-Coin_of_Julius_Caesar_Sacred_Palladium.jpg',
+        image: '/assets/Heads-Coin_of_Julius_Caesar_Sacred_Palladium.gif',
         imageAlt: "Heads side of coin"
       }
       res.end(JSON.stringify(objToJson));
@@ -29,7 +29,7 @@ const server = http.createServer((req, res) => {
       res.writeHead(200, {'Content-Type': 'application/json'});
       const objToJson = {
         name: flipRes,
-        image: '/assets/Tails-Coin_of_Julius_Caesar_Sacred_Palladium.jpg',
+        image: '/assets/Tails-Coin_of_Julius_Caesar_Sacred_Palladium.gif',
         imageAlt: "Tails side of coin"
       }
       res.end(JSON.stringify(objToJson));
@@ -48,16 +48,16 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   }
-  else if (page == '/assets/Heads-Coin_of_Julius_Caesar_Sacred_Palladium.jpg'){
-    fs.readFile('./assets/Heads-Coin_of_Julius_Caesar_Sacred_Palladium.jpg', function(err, data) {
-      res.writeHead(200, {'Content-Type': 'image/jpg' });
+  else if (page == '/assets/Heads-Coin_of_Julius_Caesar_Sacred_Palladium.gif'){
+    fs.readFile('./assets/Heads-Coin_of_Julius_Caesar_Sacred_Palladium.gif', function(err, data) {
+      res.writeHead(200, {'Content-Type': 'image/gif' });
        res.write(data);
       res.end();
     });
   }
-  else if (page == '/assets/Tails-Coin_of_Julius_Caesar_Sacred_Palladium.jpg'){
-    fs.readFile('./assets/Tails-Coin_of_Julius_Caesar_Sacred_Palladium.jpg', function(err, data) {
-      res.writeHead(200, {'Content-Type': 'image/jpg' });
+  else if (page == '/assets/Tails-Coin_of_Julius_Caesar_Sacred_Palladium.gif'){
+    fs.readFile('./assets/Tails-Coin_of_Julius_Caesar_Sacred_Palladium.gif', function(err, data) {
+      res.writeHead(200, {'Content-Type': 'image/gif' });
        res.write(data);
       res.end();
     });
@@ -69,7 +69,7 @@ const server = http.createServer((req, res) => {
 
 // server.listen(process.env.PORT || 5000)
 
-var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
+var server_port = process.env.YOUR_PORT || process.env.PORT || 8000;
 var server_host = process.env.YOUR_HOST || '0.0.0.0';
 server.listen(server_port, server_host, function() {
     console.log('Listening on port %d', server_port);
