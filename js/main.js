@@ -4,13 +4,17 @@ async function makeReq(){
 
   const res = await fetch(`/api`)
   const data = await res.json()
+  const img = document.querySelector("#sideImage")
 
   console.log(data);
-  document.querySelector("#sideImage").classList.toggle('fade')
+  img.classList.toggle('fade')
   setTimeout(() => {
     document.querySelector("#sideName").textContent = data.name
-    document.querySelector("#sideImage").src = data.image
-    document.querySelector("#sideImage").alt = data.imageAlt 
-    document.querySelector("#sideImage").classList.toggle('fade')
+    img.src = data.image
+    img.alt = data.imageAlt 
+    img.decode()
+      .then(() => {
+        img.classList.toggle('fade')
+      })
   }, "300")
 }
