@@ -28,6 +28,13 @@ section {
 #flipMe:hover {
   background-color: hsl(200, 50%, 40%);
 }
+#sideImage {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+#sideImage.fade {
+  opacity: 0;
+}
 
 .attribution {
   font-size: 0.8rem;
