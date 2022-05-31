@@ -7,14 +7,15 @@ async function makeReq(){
   const img = document.querySelector("#sideImage")
 
   console.log(data);
-  img.classList.toggle('fade')
-  img.src = data.image
-  img.decode()
-      .then(() => {
-        setTimeout(() => {
-          document.querySelector("#sideName").textContent = data.name  
-          img.alt = data.imageAlt 
-          img.classList.toggle('fade')    
-        }, "300")
-      })  
+  img.classList.toggle('fade');
+  
+  setTimeout(() => {
+    img.src = data.image
+    img.decode()
+        .then(() => {
+            document.querySelector("#sideName").textContent = data.name;
+            img.alt = data.imageAlt;
+            img.classList.toggle('fade'); 
+        })
+  }, "300")
 }
