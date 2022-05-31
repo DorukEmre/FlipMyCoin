@@ -8,13 +8,13 @@ async function makeReq(){
 
   console.log(data);
   img.classList.toggle('fade')
-  setTimeout(() => {
-    document.querySelector("#sideName").textContent = data.name
-    img.src = data.image
-    img.alt = data.imageAlt 
-    img.decode()
+  img.src = data.image
+  img.decode()
       .then(() => {
-        img.classList.toggle('fade')
-      })
-  }, "300")
+        setTimeout(() => {
+          document.querySelector("#sideName").textContent = data.name  
+          img.alt = data.imageAlt 
+          img.classList.toggle('fade')    
+        }, "300")
+      })  
 }
