@@ -4,18 +4,30 @@ async function makeReq(){
 
   const res = await fetch(`/api`)
   const data = await res.json()
-  const img = document.querySelector("#sideImage")
-
   console.log(data);
-  img.classList.toggle('fade');
+
+  const container = document.querySelector(".image-container")
+  container.classList.toggle('flipping')
+
+  const sideName = document.querySelector(".sideName")
+  sideName.classList.toggle('fade')
   
+  const newImg = document.createElement("img")
+  newImg.src = data.image
+  newImg.alt = data.imageAlt
+
   setTimeout(() => {
-    img.src = data.image
-    img.decode()
+    newImg.decode()
         .then(() => {
-            document.querySelector("#sideName").textContent = data.name;
-            img.alt = data.imageAlt;
-            img.classList.toggle('fade'); 
+          sideName.textContent = data.name;
+          sideName.classList.toggle('fade')
+          
+          const img = document.querySelector(".sideImage")
+          img.parentNode.removeChild(img)
+
+          newImg.classList.add("sideImage")          
+          container.appendChild(newImg)
+          container.classList.toggle('flipping'); 
         })
-  }, "300")
+  }, "500")
 }
